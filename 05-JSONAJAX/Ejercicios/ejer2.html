@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>How to access nested JSON objects.</p>
+
+<p id="demo"> El nombre es:</p>
+
+<p id="propiedades1">Las propiedades son:</p>
+
+<p id="propiedades2">Las propiedades son:</p>
+
+<script>
+var Pet = {
+  "name":"Rainbow",
+  "species":"cat",
+  "FavFood": {
+    "food1":"wiskas",
+    "food2":"royal",
+    "food3":"ham"
+  }
+}
+document.getElementById("demo").innerHTML += Pet.name + "<br>";
+//or:
+for (x in Pet.FavFood) {
+    document.getElementById("propiedades1").innerHTML += "<br>" + x ;
+}
+
+delete Pet.FavFood["food1"]; 
+
+for (x in Pet.FavFood) {
+    document.getElementById("propiedades2").innerHTML +="<br>" + x ;
+}
+
+</script>
+
+</body>
+</html>

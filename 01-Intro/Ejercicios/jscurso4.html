@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+    <script type="text/javascript">
+        
+      var res = ""; var nombre = "";
+        res = prompt ("¿Cual es tu nombre completo?", "");
+        tot = res.length;
+        for(j=0;j<=tot;j++){
+            letr = res.charAt(j);
+            if(j>0){space = res.charAt(j-1);}
+            if(j==0){letr = letr.toUpperCase();}
+            if(space==" "){letr = letr.toUpperCase();}
+            nombre += letr;
+        }
+        
+        alert (nombre);
+        
+        var numero = prompt ("Ingresa un numero entero:", "");
+        var res="";
+        reg = numero.toString(); total = reg.length;
+        
+        for(i=0;i<=total;i++){
+            r = reg.charAt(total-i);
+            res += r;
+        }
+        
+         alert(res);
+
+    </script>
+ </HEAD>
+ <BODY> 
+ </BODY>
+</HTML>

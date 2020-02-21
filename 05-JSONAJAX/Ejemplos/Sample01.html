@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Access a JSON object:</p>
+
+<p id="demo"></p>
+
+<script>
+
+
+var myObj, x;
+myObj = { "name":"John", "age":30, "car":null };
+
+//--- Con punto:
+//x = myObj.name;
+
+//--- Con corchetes:
+x = myObj["name"];
+
+document.getElementById("demo").innerHTML = x;
+
+
+
+
+</script>
+
+</body>
+</html>

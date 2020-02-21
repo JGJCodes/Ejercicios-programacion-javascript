@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Loops</p>
+
+<p id="propiedades"></p>
+<p id="valores"></p>
+
+<script>
+var myObj = { "name":"John", "age":30, "car":null };
+
+//---acceso a propiedades
+for (x in myObj) {
+    document.getElementById("propiedades").innerHTML += x + "<br>";
+}
+
+//--- acceso a valores
+for (x in myObj) {
+    document.getElementById("valores").innerHTML  += myObj[x] + "<br>";
+} 
+
+
+</script>
+
+</body>
+</html>

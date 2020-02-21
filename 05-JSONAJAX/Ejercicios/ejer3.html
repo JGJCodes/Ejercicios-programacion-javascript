@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>How to access nested JSON objects.</p>
+
+<p id="demo">Los juguetes son:</p>
+
+<script>
+var Pets = [
+   {"name":"Rainbow", "species":"cat","toys": ["ball"]},
+   {"name":"Blacky","species":"dog","toys": ["ball","bone","boomerang"]}
+]
+var x="";
+
+for (i in Pets) {
+    x += "<h2>" + Pets[i].name + "</h2>";
+    for (j in Pets[i].toys) {
+        x += Pets[i].toys[j] + "<br>";
+    }
+}
+
+document.getElementById("demo").innerHTML += "<br>" + x;
+
+</script>
+
+</body>
+</html>

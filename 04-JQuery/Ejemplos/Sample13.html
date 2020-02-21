@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.descendants * { 
+    display: block;
+    border: 2px solid lightgrey;
+    color: lightgrey;
+    padding: 5px;
+    margin: 15px;
+}
+</style>
+
+<script src="jquery.min.js"></script>
+<script src="Sample13.js"></script>
+
+</head>
+
+
+<body>
+
+<div class="descendants" style="width:500px;">div (current element) 
+  <p>p (child)
+    <span id="span1">span (grandchild)</span>     
+  </p>
+  <p>p (child)
+    <span>span (grandchild)</span>
+  </p> 
+</div>
+
+
+<button>Children of Div on red</button>
+
+</body>
+</html>

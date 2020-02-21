@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <script LANGUAGE="JavaScript">
+
+  function validaciones(){
+    valnombre();
+  
+    var dia = document.getElementById("dia").value;
+    var mes = document.getElementById("mes").value;
+    var año = document.getElementById("año").value;
+    
+    var rfc = document.getElementById("rfc").value;
+
+    var elementos = document.getElementsByName("sexo");
+    
+    valor = new Date(año, mes, dia);
+ 
+    if( !isNaN(valor) ) {
+        return false;
+    }
+    
+    alert("La fecha de nac: " + valor.getDate() +"/"+ valor.getMonth() + "/" + valor.getFullYear() + "\nLa edad es:" + calcularEdad(valor));
+  
+    alert("El RFC es: " + rfc);
+  }
+  
+  function calcularEdad(fecha){
+      dia = new Date();
+      return dia.getFullYear() - fecha.getFullYear();
+  }
+  
+  function valnombre(){
+    var nom = document.getElementById("nombre").value;
+    if( nom == null || nom.length>=60 || nom.length == 0 || /^\s+$/.test(nom) ) {
+        alert("El nombre dede ser ingresado y tener como maximo 60 caracteres");
+        return false;
+    }
+    return true;
+  }
+  
+  // Asignar la función externa al elemento
+  window.onload = function() {
+    document.getElementById("formulario").onsubmit = validaciones();
+    document.getElementById("nombre").onbluor = valnombre();
+  }
+
+  alert (window.location);
+ </script>
+</head> 
+
+<body>
+
+    <h2>Formularios</h2>
+
+    <form name="formulario">
+        <label>Nombre completo:</label>
+        <input type="text" id="nombre" name="nombre"  placeholder="Nombre completo del usuario" required  />
+        
+        <div>
+            <label>Fecha de nacimiento</label>
+             <input type="text" id="dia" placeholder="03" required pattern="[0-9]{2}" />
+             <select id="mes" name="mes">
+		<option value="0">Enero</option>
+		<option value="1">Febrero</option>
+		<option value="2">Marzo</option>
+		<option value="3">Abril</option>
+		<option value="4">Mayo</option>
+		<option value="5">Junio</option>
+		<option value="6">Julio</option>
+		<option value="7">Agosto</option>
+		<option value="8">Septiembre</option>
+		<option value="9">Octubre</option>
+		<option value="10">Noviembre</option>
+		<option value="11">Diciembre</option>
+	  </select>
+             <input type="text" id="año" placeholder="1950" required pattern="[0-9]{4}" />
+        </div>
+        
+        <label>RFC:</label>
+        <input type="text" id="rfc" placeholder="12345368902347" pattern="[0-9]{14}" />
+        
+        <div>
+            <label>Sexo:</label>
+              <input type="radio" value="F" name="sexo" checked id="sexo_f"/> Femenino
+                <input type="radio" value="M" name="sexo" id="sexo_m"/> Masculino
+        </div>
+
+      <button id="btnEnviar" name="btnEnviar" type="submit" > Enviar </button>
+
+    </form>
+</body>
+</html>

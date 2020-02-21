@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <script  src="jquery.min.js" > </script>
+  </head>
+  <body>
+  <header>
+    <h1> JSON and AJAX </h1>
+    <button id="btn" type="button" onclick="imprimir()"  >Fetch for 3 new Animals</button>
+   
+    <div id="animal-info" >
+    
+    </div>
+  
+ </header>
+  
+  <script>
+      function loadDoc(archivo) {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.open("GET", archivo);
+	  xhttp.onload = function(){
+	    var dat = xhttp.responseText;
+	    var myJSON = JSON.parse(dat);
+	    var x ="";
+	    for (i in myJSON) {
+		$.each(myJSON[i], function(key,val){
+		  debugger;
+		  if($.isPlainObject(val)){
+		    $.each(myJSON[i], function(key,val){
+		      x +="<h3>" + key + " : " + val + " </h3>";
+		    });
+		    
+		  }else{
+		    if($.isNumeric(val)){
+		      x +="<h4>" + key + " : " + val + " </h4>";
+		    }else{
+		      x +="<h2>" + key + " : " + val + " </h2>";
+		    }
+		  }
+		});
+		
+		
+	    }
+	    document.getElementById ("animal-info").innerHTML = x;
+	  }
+	  xhttp.send();
+      }
+      
+      function imprimir(){
+	  var archivo = prompt("Ingresa el nombre del archivos que deseas leer","");
+	  loadDoc(archivo);
+	  document.getElementById("btn").style.display = "none";
+      }
+
+  </script>
+  
+  </body>
+
+</html>

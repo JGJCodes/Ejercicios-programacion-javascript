@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>Access a JSON object:</p>
+
+<p id="demo1"></p>
+
+<p id="demo2"></p>
+
+<p id="demo3"></p>
+
+<script>
+
+
+var Company = { 
+"name":"Neitek Solutions",
+"address":"Torre Diamante 1007 Local 902",
+"city": "Monterrey",
+ "telephone" : "8113650243",
+ "business":"Computer Systems"
+};
+
+document.getElementById("demo1").innerHTML = "El nombre es: " + Company.name +" y la direccion es: " + Company.address;
+
+var school = { 
+"name":"Tecnologico de Ciudad Madero",
+"carreers":["Ing. en Sistemas","Ing. en Electrica","Ing. en Electronica"]
+};
+
+var person = { 
+"name":"Lucia",
+ "age": 25,
+"favcolor":{"color1":"Pink","color2":"Black","color3":"Purple"}
+};
+
+document.getElementById("demo2").innerHTML = "El nombre es: " + school.name +" y las carreras son: " + school.carrers;
+
+document.getElementById("demo3").innerHTML = "El nombre es: " + person.name +" y la edad es: " + person.age;
+
+</script>
+
+</body>
+</html>

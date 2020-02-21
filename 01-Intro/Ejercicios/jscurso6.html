@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+    <script type="text/javascript">
+        
+     n = prompt ("Ingrese el valor maximo de tabla", "");
+
+      var arreglo = new Array(n);  tabla = [10];     
+         
+        for(i=0;i<n;i++){
+            for(j=1;j<11;j++){
+                tabla[j-1]=(i+1)*j;
+            }
+            arreglo[i] = tabla;
+        }
+
+        for(l=0;l<n;l++){
+            document.writeln(arreglo[l]+'<br>')
+        }
+
+    </script>
+ </HEAD>
+ <BODY> 
+ </BODY>
+</HTML>

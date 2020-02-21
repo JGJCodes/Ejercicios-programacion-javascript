@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+    <SCRIPT LANGUAGE="JavaScript">
+
+    function screenDimensiones(){
+      return "El ancho de la pantalla es: "+ screen.height + "\n" + "El largo de la pantalla es: " + screen.width;
+    }
+    
+    function urlNombre(){
+      return "El nombre del url es: "+ location.hostname;
+    }
+    
+    function windNombre(){
+      return "El nombre de la ventana es: "+ windows.name;
+    }
+    
+    function navNombre(){
+      return "El nombre del navegador es: "+ navigator.appName;
+    }
+    
+    function navJava(){
+      if(navigator.javaEnabled){
+	return "El navegador es compatible con Java.";
+      }else{
+	return "El navegador no es compatible con Java.";
+      }
+      
+    }
+    
+    function navCookie(){
+      if(navigator.cookieEnabled){
+	return "El navegador tiene activados los cookies.";
+      }else{
+	return "El navegador no tiene activado los cookies.";
+      }
+      
+    }
+    
+    alert(navNombre() +"\n"+ navJava() + "\n" + navCookie() + "\n" + screenDimensiones());
+    
+    </SCRIPT>
+ </HEAD>
+ <BODY> 
+ 
+ <H1>Mi pagina web</H1>
+ 
+ </BODY>
+</HTML>

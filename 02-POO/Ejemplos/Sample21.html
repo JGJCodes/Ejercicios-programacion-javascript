@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script>
+//-------
+
+function A_Object(name) {
+  this.name = name;
+  this.sayHi = function() {
+    return "Hi, I'm " + this.name;
+  }
+}
+
+function B_Object (aName){
+  this.lastname = aName;
+}
+
+function C_Object (lost){
+  this.lost = lost;
+}
+
+B_Object.prototype = new A_Object();
+B_Object.prototype.constructor = B_Object;
+
+C_Object.prototype = new A_Object();
+C_Object.prototype.constructor = C_Object;
+
+a = new A_Object("A");
+b = new B_Object("B"); b.name = "B";
+c = new C_Object("C"); c.name = "C";
+
+document.write (a.sayHi() + "<br/>");
+document.write (b.sayHi() + "<br/>");
+document.write (c.sayHi() + "<br/>");
+//---------
+
+</script>
+
+</body>
+</html>
+

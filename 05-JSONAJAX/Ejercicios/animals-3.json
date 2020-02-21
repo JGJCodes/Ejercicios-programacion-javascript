@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Mewtwo",
+    "species" : "gato",
+    "foods": {
+      "likes": ["carros", "zanahorias"],
+      "dislikes": ["jamon", "sushi"]
+    }
+  },
+  {
+    "name": "Barny",
+    "species" : "ave",
+    "foods": {
+      "likes": ["arroz", "maiz"],
+      "dislikes": ["atun"]
+    }
+  },
+  {
+    "name": "Nemo",
+    "species" : "pez",
+    "foods": {
+      "likes": ["agua"],
+      "dislikes": ["gatos"]
+    }
+  }
+]

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>This is first page.</h2>
+
+<button type="button" name="btn1" id="btn1" onclick="goToNextPage()" >Let's Go!</button>
+<script>
+
+function goToNextPage (){
+
+    var myObj = { "name":"John", "age":31, "city":"New York" };
+    var myJSON = JSON.stringify(myObj);
+    window.location = "Sample07a.html?x=" + myJSON;
+}
+
+</script>
+
+
+</body>
+</html>

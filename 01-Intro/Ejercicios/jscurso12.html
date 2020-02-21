@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Eventos</h2>
+
+<script>
+// Función externa
+function mensaje() {
+   dia = new Date();
+  alert("Fecha: "+ dia.getDate()+'/' + (dia.getMonth()+1) + '/' + dia.getFullYear() + "\nHora: " + dia.getHours() + ":" + dia.getMinutes()+ ":"+dia.getSeconds());
+}
+
+function dis(){
+   document.getElementById("divgol").style.width += 10;
+}
+
+function texto(){
+    t = prompt("Escribe el titulo","");
+    document.getElementById("titulo") = t;
+}
+
+colores = ['green','blue','red'];
+
+function color
+ 
+// Asignar la función externa al elemento
+window.onload = function() {
+document.getElementById("btn1").onclick = mensaje;
+document.getElementById("divgol").onmousedown = dis;
+texto();
+}
+</script>
+ 
+<input id="btn1" type="button" value="Pinchame y verás" />
+<br>
+<div id="divgol" style="width:300px; border: thin solid red"  >  GOOLLLLLLL...</div>
+
+<H1 id="titulo" ></H1>
+
+<br>
+
+<input id="btn2" type="button" value="Hola" />
+
+</body>
+</html>

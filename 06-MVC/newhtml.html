@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url: "http://services.groupkt.com/country/get/all"
+            }).then(function(data){
+                //debugger;
+                var x = "";
+                for(i in data){
+                    $.each(data[i], function(key, val){
+                        //debugger;
+                        if($.isPlainObject(val)){
+                             $.each(data[i], function(key, val){
+                                    x+="<h3>"+key+" : "+val + "</h3>";
+                             });
+                        }else{
+                            if($.isArray(val)){
+                                if($.isPlainObject(val)){
+                                    x+="<h4>"+key+" : "+val + "</h4>";
+                                }else{
+                                    if($.isArray(val)){
+                                if($.isPlainObject(val)){
+                                    x+="<h4>"+key+" : "+val + "</h4>";
+                                }else{
+                                    x+="<h2>"+key+" : "+val + "</h2>";
+                                }
+                            }else{
+                                if($.isPlainObject(val)){
+                                    x+="<h5>"+key+" : "+val + "</h5>";
+                                }else{
+                                    x+="<h1>"+key+" : "+val + "</h1>";
+                                }
+                            }
+           
+                                }
+                            }else{
+                                if($.isPlainObject(val)){
+                                    x+="<h5>"+key+" : "+val + "</h5>";
+                                }else{
+                                    x+="<h1>"+key+" : "+val + "</h1>";
+                                }
+                            }
+                        }
+                          
+                    });
+                }
+                $('#info').append(x);
+            });
+        });
+        
+    </script>
+    </head>
+    <body>
+        <div>TODO write content</div>
+        
+        <div id="info"></div>
+        
+         <div id="content"></div>
+    </body>
+</html>

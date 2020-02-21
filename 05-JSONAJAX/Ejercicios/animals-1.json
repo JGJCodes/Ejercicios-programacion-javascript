@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Mew",
+    "species" : "gato",
+    "foods": {
+      "likes": ["atun", "pelusa"],
+      "dislikes": ["perros", "zucchini"]
+    }
+  },
+  {
+    "name": "Snoopy",
+    "species" : "perro",
+    "foods": {
+      "likes": ["pelotas", "naranjas"],
+      "dislikes": ["atun"]
+    }
+  },
+  {
+    "name": "Puar",
+    "species" : "pato",
+    "foods": {
+      "likes": ["aroz"],
+      "dislikes": ["galletas"]
+    }
+  }
+]

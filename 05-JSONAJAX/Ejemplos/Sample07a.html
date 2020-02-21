@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>This is second page</h2>
+
+<div id="divX" style="border:1px solid black; padding:20px"> </div>
+<script>
+
+function get(name){
+   if(name=(new RegExp('[?&]'+encodeURIComponent(name)+'=([^&]*)')).exec(location.search))
+      return decodeURIComponent(name[1]);
+}
+var xVal = get('x');
+console.log("x =" +  xVal);
+document.getElementById ("divX").innerHTML = xVal;
+
+var my = JSON.parse(xVal);
+console.log(my.city)
+//---------
+
+</script>
+
+</body>
+</html>

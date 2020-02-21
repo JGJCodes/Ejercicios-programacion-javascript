@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <body>
+  <header>
+    <h1> JSON and AJAX </h1>
+    <button id="btn" type="button" onclick="imprimir()"  >Fetch for 3 new Animals</button>
+   
+    <div id="animal-info" >
+    
+    </div>
+  
+ </header>
+  
+  <script>
+      function loadDoc(num) {
+	  var xhttp = new XMLHttpRequest();
+	  xhttp.open("GET", "animals-"+num+".json");
+	  xhttp.onload = function(){
+	    var dat = xhttp.responseText;
+	    var myJSON = JSON.parse(dat);
+	    for (i in myJSON) {
+	     var x = "", y = "";
+		for (j in myJSON[i].foods.likes) {
+		  x = " sus comidas favoritas son " + myJSON[i].foods.likes + " ";
+		}
+		for (l in myJSON[i].foods.dislikes) {
+		  y = " sus comidas no favoritas son " + myJSON[i].foods.likes + "<br> <br>";
+		}
+		document.getElementById ("animal-info").innerHTML += myJSON[i].name + " es un " + myJSON[i].species + x + y;
+		
+	    }
+	  }
+	  xhttp.send();
+      }
+      
+      function imprimir(){
+	  for(i=1;i<4;i++){
+	    loadDoc(i);
+	  }
+	  document.getElementById("btn").style.display = "none";
+      }
+
+  </script>
+  
+  </body>
+
+</html>

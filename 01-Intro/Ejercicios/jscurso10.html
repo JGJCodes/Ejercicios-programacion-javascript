@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+ <HEAD>
+    <SCRIPT LANGUAGE="JavaScript">
+    
+            var dia = 0, mes = 0, año=0;  
+
+            dia= prompt ("Ingrese el dia de la fecha(dd):", "");
+            mes= prompt ("Ingrese el mes de la fecha(mm):", "");
+            año= prompt ("Ingrese el año de la fecha(yyyy):", "");
+            mes--;
+            var fecha = new Date(año,mes,dia);
+
+            alert("La fecha ingresada es:" + fecha);
+            
+            citas = [6];
+            
+            for(i=0;i<6;i++){
+                mes++;
+                if(mes>=12){ mes = 0; año++; }
+                citas[i] = new Date(año,mes,dia);
+            }
+            
+            for(j=0;j<6;j++){
+                document.writeln(citas[j].getDate()+'/' +citas[j].getMonth() + '/' + citas[j].getFullYear() +'<br>');
+            }
+            
+
+    </SCRIPT>
+ </HEAD>
+ <BODY> 
+ </BODY>
+</HTML>

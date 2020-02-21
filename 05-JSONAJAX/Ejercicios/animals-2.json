@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Donal",
+    "species" : "pato",
+    "foods": {
+      "likes": ["peces", "pan"],
+      "dislikes": ["perros", "gatos"]
+    }
+  },
+  {
+    "name": "Mikey",
+    "species" : "raton",
+    "foods": {
+      "likes": ["queso", "leche"],
+      "dislikes": ["gatos"]
+    }
+  },
+  {
+    "name": "Pluto",
+    "species" : "perro",
+    "foods": {
+      "likes": ["pelotas"],
+      "dislikes": ["gatos"]
+    }
+  }
+]

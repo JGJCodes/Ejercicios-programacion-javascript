@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>This is first page.</h2>
+
+<button type="button" name="btn1" id="btn1" onclick="goToNextPage()" >Let's Go!</button>
+
+<p id="info"> </p>
+
+<p id="string"> </p>
+
+<script>
+
+function goToNextPage (){
+
+    var Person = '{ "firstName":"Julio", "lastName": "Cepeda", "phones": ["5552232","1231333"] }';
+    var myJSON = JSON.parse(Person);
+    for (i in myJSON) {
+      document.getElementById ("info").innerHTML += i + ",";
+    }
+    
+    var Persona = { "firstName":"Julio", "lastName": "Cepeda", "phones": ["5552232","1231333"] };
+    var p = JSON.stringify(Persona);
+    document.getElementById ("string").innerHTML = p;
+    
+    
+}
+
+</script>
+
+
+</body>
+</html>
